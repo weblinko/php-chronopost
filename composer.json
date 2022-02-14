@@ -1,0 +1,15 @@
+{
+    "name": "weblinko/php-chronopost",
+    "description": "Package generated from https://ws.chronopost.fr/shipping-cxf/ShippingServiceWS?wsdl using wsdltophp/packagegenerator",
+    "require": {
+        "php": ">=5.3.3",
+        "ext-soap": "*",
+        "ext-mbstring": "*",
+        "wsdltophp/packagebase": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Chronopost\\": "./src/"
+        }
+    }
+}
