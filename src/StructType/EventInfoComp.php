@@ -1,13 +1,12 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Chronopost\StructType;
 
-use InvalidArgumentException;
+use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
- * This class stands for eventInfoComp StructType.
+ * This class stands for eventInfoComp StructType
+ * @subpackage Structs
  */
 class EventInfoComp extends Event
 {
@@ -16,52 +15,39 @@ class EventInfoComp extends Event
      * Meta information extracted from the WSDL
      * - maxOccurs: unbounded
      * - minOccurs: 0
-     * - nillable: true.
-     *
+     * - nillable: true
      * @var \Chronopost\StructType\InfoComp[]
      */
-    protected ?array $infoCompList = null;
-
+    public $infoCompList;
     /**
-     * Constructor method for eventInfoComp.
-     *
+     * Constructor method for eventInfoComp
      * @uses EventInfoComp::setInfoCompList()
-     *
      * @param \Chronopost\StructType\InfoComp[] $infoCompList
      */
-    public function __construct(?array $infoCompList = null)
+    public function __construct(array $infoCompList = array())
     {
         $this
-            ->setInfoCompList($infoCompList)
-        ;
+            ->setInfoCompList($infoCompList);
     }
-
     /**
      * Get infoCompList value
      * An additional test has been added (isset) before returning the property value as
      * this property may have been unset before, due to the fact that this property is
-     * removable from the request (nillable=true+minOccurs=0).
-     *
-     * @return \Chronopost\StructType\InfoComp[]
+     * removable from the request (nillable=true+minOccurs=0)
+     * @return \Chronopost\StructType\InfoComp[]|null
      */
-    public function getInfoCompList(): ?array
+    public function getInfoCompList()
     {
         return isset($this->infoCompList) ? $this->infoCompList : null;
     }
-
     /**
      * This method is responsible for validating the values passed to the setInfoCompList method
-     * This method is willingly generated in order to preserve the one-line inline validation within the setInfoCompList method.
-     *
+     * This method is willingly generated in order to preserve the one-line inline validation within the setInfoCompList method
      * @param array $values
-     *
      * @return string A non-empty message if the values does not match the validation rules
      */
-    public static function validateInfoCompListForArrayConstraintsFromSetInfoCompList(?array $values = []): string
+    public static function validateInfoCompListForArrayConstraintsFromSetInfoCompList(array $values = array())
     {
-        if (!is_array($values)) {
-            return '';
-        }
         $message = '';
         $invalidValues = [];
         foreach ($values as $eventInfoCompInfoCompListItem) {
@@ -74,53 +60,42 @@ class EventInfoComp extends Event
             $message = sprintf('The infoCompList property can only contain items of type \Chronopost\StructType\InfoComp, %s given', is_object($invalidValues) ? get_class($invalidValues) : (is_array($invalidValues) ? implode(', ', $invalidValues) : gettype($invalidValues)));
         }
         unset($invalidValues);
-
         return $message;
     }
-
     /**
      * Set infoCompList value
      * This property is removable from request (nillable=true+minOccurs=0), therefore
-     * if the value assigned to this property is null, it is removed from this object.
-     *
+     * if the value assigned to this property is null, it is removed from this object
+     * @throws \InvalidArgumentException
      * @param \Chronopost\StructType\InfoComp[] $infoCompList
-     *
-     * @throws InvalidArgumentException
-     *
      * @return \Chronopost\StructType\EventInfoComp
      */
-    public function setInfoCompList(?array $infoCompList = null): self
+    public function setInfoCompList(array $infoCompList = array())
     {
         // validation for constraint: array
         if ('' !== ($infoCompListArrayErrorMessage = self::validateInfoCompListForArrayConstraintsFromSetInfoCompList($infoCompList))) {
-            throw new InvalidArgumentException($infoCompListArrayErrorMessage, __LINE__);
+            throw new \InvalidArgumentException($infoCompListArrayErrorMessage, __LINE__);
         }
         if (is_null($infoCompList) || (is_array($infoCompList) && empty($infoCompList))) {
             unset($this->infoCompList);
         } else {
             $this->infoCompList = $infoCompList;
         }
-
         return $this;
     }
-
     /**
-     * Add item to infoCompList value.
-     *
+     * Add item to infoCompList value
+     * @throws \InvalidArgumentException
      * @param \Chronopost\StructType\InfoComp $item
-     *
-     * @throws InvalidArgumentException
-     *
      * @return \Chronopost\StructType\EventInfoComp
      */
-    public function addToInfoCompList(InfoComp $item): self
+    public function addToInfoCompList(\Chronopost\StructType\InfoComp $item)
     {
         // validation for constraint: itemType
         if (!$item instanceof \Chronopost\StructType\InfoComp) {
-            throw new InvalidArgumentException(sprintf('The infoCompList property can only contain items of type \Chronopost\StructType\InfoComp, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
+            throw new \InvalidArgumentException(sprintf('The infoCompList property can only contain items of type \Chronopost\StructType\InfoComp, %s given', is_object($item) ? get_class($item) : (is_array($item) ? implode(', ', $item) : gettype($item))), __LINE__);
         }
         $this->infoCompList[] = $item;
-
         return $this;
     }
 }

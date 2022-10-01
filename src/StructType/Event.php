@@ -1,63 +1,66 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Chronopost\StructType;
 
-use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
+use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
- * This class stands for event StructType.
+ * This class stands for event StructType
+ * @subpackage Structs
  */
 class Event extends AbstractStructBase
 {
     /**
      * The code
      * Meta information extracted from the WSDL
-     * - minOccurs: 0.
+     * - minOccurs: 0
+     * @var string
      */
-    protected ?string $code = null;
+    public $code;
     /**
      * The eventDate
      * Meta information extracted from the WSDL
-     * - minOccurs: 0.
+     * - minOccurs: 0
+     * @var string
      */
-    protected ?string $eventDate = null;
+    public $eventDate;
     /**
      * The eventLabel
      * Meta information extracted from the WSDL
-     * - minOccurs: 0.
+     * - minOccurs: 0
+     * @var string
      */
-    protected ?string $eventLabel = null;
+    public $eventLabel;
     /**
      * The highPriority
      * Meta information extracted from the WSDL
-     * - minOccurs: 0.
+     * - minOccurs: 0
+     * @var bool
      */
-    protected ?bool $highPriority = null;
+    public $highPriority;
     /**
      * The NPC
      * Meta information extracted from the WSDL
-     * - minOccurs: 0.
+     * - minOccurs: 0
+     * @var string
      */
-    protected ?string $NPC = null;
+    public $NPC;
     /**
      * The officeLabel
      * Meta information extracted from the WSDL
-     * - minOccurs: 0.
+     * - minOccurs: 0
+     * @var string
      */
-    protected ?string $officeLabel = null;
+    public $officeLabel;
     /**
      * The zipCode
      * Meta information extracted from the WSDL
-     * - minOccurs: 0.
+     * - minOccurs: 0
+     * @var string
      */
-    protected ?string $zipCode = null;
-
+    public $zipCode;
     /**
-     * Constructor method for event.
-     *
+     * Constructor method for event
      * @uses Event::setCode()
      * @uses Event::setEventDate()
      * @uses Event::setEventLabel()
@@ -65,16 +68,15 @@ class Event extends AbstractStructBase
      * @uses Event::setNPC()
      * @uses Event::setOfficeLabel()
      * @uses Event::setZipCode()
-     *
      * @param string $code
      * @param string $eventDate
      * @param string $eventLabel
-     * @param bool   $highPriority
+     * @param bool $highPriority
      * @param string $nPC
      * @param string $officeLabel
      * @param string $zipCode
      */
-    public function __construct(?string $code = null, ?string $eventDate = null, ?string $eventLabel = null, ?bool $highPriority = null, ?string $nPC = null, ?string $officeLabel = null, ?string $zipCode = null)
+    public function __construct($code = null, $eventDate = null, $eventLabel = null, $highPriority = null, $nPC = null, $officeLabel = null, $zipCode = null)
     {
         $this
             ->setCode($code)
@@ -83,189 +85,160 @@ class Event extends AbstractStructBase
             ->setHighPriority($highPriority)
             ->setNPC($nPC)
             ->setOfficeLabel($officeLabel)
-            ->setZipCode($zipCode)
-        ;
+            ->setZipCode($zipCode);
     }
-
     /**
-     * Get code value.
+     * Get code value
+     * @return string|null
      */
-    public function getCode(): ?string
+    public function getCode()
     {
         return $this->code;
     }
-
     /**
-     * Set code value.
-     *
+     * Set code value
      * @param string $code
-     *
      * @return \Chronopost\StructType\Event
      */
-    public function setCode(?string $code = null): self
+    public function setCode($code = null)
     {
         // validation for constraint: string
         if (!is_null($code) && !is_string($code)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($code, true), gettype($code)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($code, true), gettype($code)), __LINE__);
         }
         $this->code = $code;
-
         return $this;
     }
-
     /**
-     * Get eventDate value.
+     * Get eventDate value
+     * @return string|null
      */
-    public function getEventDate(): ?string
+    public function getEventDate()
     {
         return $this->eventDate;
     }
-
     /**
-     * Set eventDate value.
-     *
+     * Set eventDate value
      * @param string $eventDate
-     *
      * @return \Chronopost\StructType\Event
      */
-    public function setEventDate(?string $eventDate = null): self
+    public function setEventDate($eventDate = null)
     {
         // validation for constraint: string
         if (!is_null($eventDate) && !is_string($eventDate)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eventDate, true), gettype($eventDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eventDate, true), gettype($eventDate)), __LINE__);
         }
         $this->eventDate = $eventDate;
-
         return $this;
     }
-
     /**
-     * Get eventLabel value.
+     * Get eventLabel value
+     * @return string|null
      */
-    public function getEventLabel(): ?string
+    public function getEventLabel()
     {
         return $this->eventLabel;
     }
-
     /**
-     * Set eventLabel value.
-     *
+     * Set eventLabel value
      * @param string $eventLabel
-     *
      * @return \Chronopost\StructType\Event
      */
-    public function setEventLabel(?string $eventLabel = null): self
+    public function setEventLabel($eventLabel = null)
     {
         // validation for constraint: string
         if (!is_null($eventLabel) && !is_string($eventLabel)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eventLabel, true), gettype($eventLabel)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eventLabel, true), gettype($eventLabel)), __LINE__);
         }
         $this->eventLabel = $eventLabel;
-
         return $this;
     }
-
     /**
-     * Get highPriority value.
+     * Get highPriority value
+     * @return bool|null
      */
-    public function getHighPriority(): ?bool
+    public function getHighPriority()
     {
         return $this->highPriority;
     }
-
     /**
-     * Set highPriority value.
-     *
+     * Set highPriority value
      * @param bool $highPriority
-     *
      * @return \Chronopost\StructType\Event
      */
-    public function setHighPriority(?bool $highPriority = null): self
+    public function setHighPriority($highPriority = null)
     {
         // validation for constraint: boolean
         if (!is_null($highPriority) && !is_bool($highPriority)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($highPriority, true), gettype($highPriority)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($highPriority, true), gettype($highPriority)), __LINE__);
         }
         $this->highPriority = $highPriority;
-
         return $this;
     }
-
     /**
-     * Get NPC value.
+     * Get NPC value
+     * @return string|null
      */
-    public function getNPC(): ?string
+    public function getNPC()
     {
         return $this->NPC;
     }
-
     /**
-     * Set NPC value.
-     *
+     * Set NPC value
      * @param string $nPC
-     *
      * @return \Chronopost\StructType\Event
      */
-    public function setNPC(?string $nPC = null): self
+    public function setNPC($nPC = null)
     {
         // validation for constraint: string
         if (!is_null($nPC) && !is_string($nPC)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nPC, true), gettype($nPC)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($nPC, true), gettype($nPC)), __LINE__);
         }
         $this->NPC = $nPC;
-
         return $this;
     }
-
     /**
-     * Get officeLabel value.
+     * Get officeLabel value
+     * @return string|null
      */
-    public function getOfficeLabel(): ?string
+    public function getOfficeLabel()
     {
         return $this->officeLabel;
     }
-
     /**
-     * Set officeLabel value.
-     *
+     * Set officeLabel value
      * @param string $officeLabel
-     *
      * @return \Chronopost\StructType\Event
      */
-    public function setOfficeLabel(?string $officeLabel = null): self
+    public function setOfficeLabel($officeLabel = null)
     {
         // validation for constraint: string
         if (!is_null($officeLabel) && !is_string($officeLabel)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($officeLabel, true), gettype($officeLabel)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($officeLabel, true), gettype($officeLabel)), __LINE__);
         }
         $this->officeLabel = $officeLabel;
-
         return $this;
     }
-
     /**
-     * Get zipCode value.
+     * Get zipCode value
+     * @return string|null
      */
-    public function getZipCode(): ?string
+    public function getZipCode()
     {
         return $this->zipCode;
     }
-
     /**
-     * Set zipCode value.
-     *
+     * Set zipCode value
      * @param string $zipCode
-     *
      * @return \Chronopost\StructType\Event
      */
-    public function setZipCode(?string $zipCode = null): self
+    public function setZipCode($zipCode = null)
     {
         // validation for constraint: string
         if (!is_null($zipCode) && !is_string($zipCode)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($zipCode, true), gettype($zipCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($zipCode, true), gettype($zipCode)), __LINE__);
         }
         $this->zipCode = $zipCode;
-
         return $this;
     }
 }

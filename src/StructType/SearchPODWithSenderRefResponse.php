@@ -1,60 +1,50 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Chronopost\StructType;
 
-use WsdlToPhp\PackageBase\AbstractStructBase;
+use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for searchPODWithSenderRefResponse StructType
  * Meta information extracted from the WSDL
- * - type: tns:searchPODWithSenderRefResponse.
+ * - type: tns:searchPODWithSenderRefResponse
+ * @subpackage Structs
  */
 class SearchPODWithSenderRefResponse extends AbstractStructBase
 {
     /**
      * The return
      * Meta information extracted from the WSDL
-     * - minOccurs: 0.
+     * - minOccurs: 0
+     * @var \Chronopost\StructType\ResultSearchPODWithSenderRef
      */
-    protected ?\Chronopost\StructType\ResultSearchPODWithSenderRef $return = null;
-
+    public $return;
     /**
-     * Constructor method for searchPODWithSenderRefResponse.
-     *
+     * Constructor method for searchPODWithSenderRefResponse
      * @uses SearchPODWithSenderRefResponse::setReturn()
-     *
      * @param \Chronopost\StructType\ResultSearchPODWithSenderRef $return
      */
-    public function __construct(?ResultSearchPODWithSenderRef $return = null)
+    public function __construct(\Chronopost\StructType\ResultSearchPODWithSenderRef $return = null)
     {
         $this
-            ->setReturn($return)
-        ;
+            ->setReturn($return);
     }
-
     /**
-     * Get return value.
-     *
-     * @return null|\Chronopost\StructType\ResultSearchPODWithSenderRef
+     * Get return value
+     * @return \Chronopost\StructType\ResultSearchPODWithSenderRef|null
      */
-    public function getReturn(): ?ResultSearchPODWithSenderRef
+    public function getReturn()
     {
         return $this->return;
     }
-
     /**
-     * Set return value.
-     *
+     * Set return value
      * @param \Chronopost\StructType\ResultSearchPODWithSenderRef $return
-     *
      * @return \Chronopost\StructType\SearchPODWithSenderRefResponse
      */
-    public function setReturn(?ResultSearchPODWithSenderRef $return = null): self
+    public function setReturn(\Chronopost\StructType\ResultSearchPODWithSenderRef $return = null)
     {
         $this->return = $return;
-
         return $this;
     }
 }

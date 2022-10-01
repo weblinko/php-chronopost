@@ -1,60 +1,50 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Chronopost\StructType;
 
-use WsdlToPhp\PackageBase\AbstractStructBase;
+use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for searchPODResponse StructType
  * Meta information extracted from the WSDL
- * - type: tns:searchPODResponse.
+ * - type: tns:searchPODResponse
+ * @subpackage Structs
  */
 class SearchPODResponse extends AbstractStructBase
 {
     /**
      * The return
      * Meta information extracted from the WSDL
-     * - minOccurs: 0.
+     * - minOccurs: 0
+     * @var \Chronopost\StructType\ResultSearchPOD
      */
-    protected ?\Chronopost\StructType\ResultSearchPOD $return = null;
-
+    public $return;
     /**
-     * Constructor method for searchPODResponse.
-     *
+     * Constructor method for searchPODResponse
      * @uses SearchPODResponse::setReturn()
-     *
      * @param \Chronopost\StructType\ResultSearchPOD $return
      */
-    public function __construct(?ResultSearchPOD $return = null)
+    public function __construct(\Chronopost\StructType\ResultSearchPOD $return = null)
     {
         $this
-            ->setReturn($return)
-        ;
+            ->setReturn($return);
     }
-
     /**
-     * Get return value.
-     *
-     * @return null|\Chronopost\StructType\ResultSearchPOD
+     * Get return value
+     * @return \Chronopost\StructType\ResultSearchPOD|null
      */
-    public function getReturn(): ?ResultSearchPOD
+    public function getReturn()
     {
         return $this->return;
     }
-
     /**
-     * Set return value.
-     *
+     * Set return value
      * @param \Chronopost\StructType\ResultSearchPOD $return
-     *
      * @return \Chronopost\StructType\SearchPODResponse
      */
-    public function setReturn(?ResultSearchPOD $return = null): self
+    public function setReturn(\Chronopost\StructType\ResultSearchPOD $return = null)
     {
         $this->return = $return;
-
         return $this;
     }
 }

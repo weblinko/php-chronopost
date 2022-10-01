@@ -1,60 +1,50 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Chronopost\StructType;
 
-use WsdlToPhp\PackageBase\AbstractStructBase;
+use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for trackWithSenderRefResponse StructType
  * Meta information extracted from the WSDL
- * - type: tns:trackWithSenderRefResponse.
+ * - type: tns:trackWithSenderRefResponse
+ * @subpackage Structs
  */
 class TrackWithSenderRefResponse extends AbstractStructBase
 {
     /**
      * The return
      * Meta information extracted from the WSDL
-     * - minOccurs: 0.
+     * - minOccurs: 0
+     * @var \Chronopost\StructType\ResultTrackWithSenderRef
      */
-    protected ?\Chronopost\StructType\ResultTrackWithSenderRef $return = null;
-
+    public $return;
     /**
-     * Constructor method for trackWithSenderRefResponse.
-     *
+     * Constructor method for trackWithSenderRefResponse
      * @uses TrackWithSenderRefResponse::setReturn()
-     *
      * @param \Chronopost\StructType\ResultTrackWithSenderRef $return
      */
-    public function __construct(?ResultTrackWithSenderRef $return = null)
+    public function __construct(\Chronopost\StructType\ResultTrackWithSenderRef $return = null)
     {
         $this
-            ->setReturn($return)
-        ;
+            ->setReturn($return);
     }
-
     /**
-     * Get return value.
-     *
-     * @return null|\Chronopost\StructType\ResultTrackWithSenderRef
+     * Get return value
+     * @return \Chronopost\StructType\ResultTrackWithSenderRef|null
      */
-    public function getReturn(): ?ResultTrackWithSenderRef
+    public function getReturn()
     {
         return $this->return;
     }
-
     /**
-     * Set return value.
-     *
+     * Set return value
      * @param \Chronopost\StructType\ResultTrackWithSenderRef $return
-     *
      * @return \Chronopost\StructType\TrackWithSenderRefResponse
      */
-    public function setReturn(?ResultTrackWithSenderRef $return = null): self
+    public function setReturn(\Chronopost\StructType\ResultTrackWithSenderRef $return = null)
     {
         $this->return = $return;
-
         return $this;
     }
 }

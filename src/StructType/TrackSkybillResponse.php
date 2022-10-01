@@ -1,60 +1,50 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Chronopost\StructType;
 
-use WsdlToPhp\PackageBase\AbstractStructBase;
+use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for trackSkybillResponse StructType
  * Meta information extracted from the WSDL
- * - type: tns:trackSkybillResponse.
+ * - type: tns:trackSkybillResponse
+ * @subpackage Structs
  */
 class TrackSkybillResponse extends AbstractStructBase
 {
     /**
      * The return
      * Meta information extracted from the WSDL
-     * - minOccurs: 0.
+     * - minOccurs: 0
+     * @var \Chronopost\StructType\ResultTrackSkybill
      */
-    protected ?\Chronopost\StructType\ResultTrackSkybill $return = null;
-
+    public $return;
     /**
-     * Constructor method for trackSkybillResponse.
-     *
+     * Constructor method for trackSkybillResponse
      * @uses TrackSkybillResponse::setReturn()
-     *
      * @param \Chronopost\StructType\ResultTrackSkybill $return
      */
-    public function __construct(?ResultTrackSkybill $return = null)
+    public function __construct(\Chronopost\StructType\ResultTrackSkybill $return = null)
     {
         $this
-            ->setReturn($return)
-        ;
+            ->setReturn($return);
     }
-
     /**
-     * Get return value.
-     *
-     * @return null|\Chronopost\StructType\ResultTrackSkybill
+     * Get return value
+     * @return \Chronopost\StructType\ResultTrackSkybill|null
      */
-    public function getReturn(): ?ResultTrackSkybill
+    public function getReturn()
     {
         return $this->return;
     }
-
     /**
-     * Set return value.
-     *
+     * Set return value
      * @param \Chronopost\StructType\ResultTrackSkybill $return
-     *
      * @return \Chronopost\StructType\TrackSkybillResponse
      */
-    public function setReturn(?ResultTrackSkybill $return = null): self
+    public function setReturn(\Chronopost\StructType\ResultTrackSkybill $return = null)
     {
         $this->return = $return;
-
         return $this;
     }
 }

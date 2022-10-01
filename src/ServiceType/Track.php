@@ -1,118 +1,94 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Chronopost\ServiceType;
 
-use SoapFault;
-use WsdlToPhp\PackageBase\AbstractSoapClientBase;
+use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 /**
- * This class stands for Track ServiceType.
+ * This class stands for Track ServiceType
+ * @subpackage Services
  */
 class Track extends AbstractSoapClientBase
 {
     /**
-     * Method to call the operation originally named trackWithSenderRef.
-     *
+     * Method to call the operation originally named trackWithSenderRef
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     *
-     * @return bool|\Chronopost\StructType\TrackWithSenderRefResponse
+     * @param \Chronopost\StructType\TrackWithSenderRef $parameters
+     * @return \Chronopost\StructType\TrackWithSenderRefResponse|bool
      */
     public function trackWithSenderRef(\Chronopost\StructType\TrackWithSenderRef $parameters)
     {
         try {
-            $this->setResult($resultTrackWithSenderRef = $this->getSoapClient()->__soapCall('trackWithSenderRef', [
-                $parameters,
-            ], [], [], $this->outputHeaders));
-
-            return $resultTrackWithSenderRef;
-        } catch (SoapFault $soapFault) {
+            $this->setResult($this->getSoapClient()->trackWithSenderRef($parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-
             return false;
         }
     }
-
     /**
-     * Method to call the operation originally named trackSearch.
-     *
+     * Method to call the operation originally named trackSearch
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     *
-     * @return bool|\Chronopost\StructType\TrackSearchResponse
+     * @param \Chronopost\StructType\TrackSearch $parameters
+     * @return \Chronopost\StructType\TrackSearchResponse|bool
      */
     public function trackSearch(\Chronopost\StructType\TrackSearch $parameters)
     {
         try {
-            $this->setResult($resultTrackSearch = $this->getSoapClient()->__soapCall('trackSearch', [
-                $parameters,
-            ], [], [], $this->outputHeaders));
-
-            return $resultTrackSearch;
-        } catch (SoapFault $soapFault) {
+            $this->setResult($this->getSoapClient()->trackSearch($parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-
             return false;
         }
     }
-
     /**
-     * Method to call the operation originally named trackSkybillV2.
-     *
+     * Method to call the operation originally named trackSkybillV2
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     *
-     * @return bool|\Chronopost\StructType\TrackSkybillV2Response
+     * @param \Chronopost\StructType\TrackSkybillV2 $parameters
+     * @return \Chronopost\StructType\TrackSkybillV2Response|bool
      */
     public function trackSkybillV2(\Chronopost\StructType\TrackSkybillV2 $parameters)
     {
         try {
-            $this->setResult($resultTrackSkybillV2 = $this->getSoapClient()->__soapCall('trackSkybillV2', [
-                $parameters,
-            ], [], [], $this->outputHeaders));
-
-            return $resultTrackSkybillV2;
-        } catch (SoapFault $soapFault) {
+            $this->setResult($this->getSoapClient()->trackSkybillV2($parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-
             return false;
         }
     }
-
     /**
-     * Method to call the operation originally named trackSkybill.
-     *
+     * Method to call the operation originally named trackSkybill
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
+     * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
-     *
-     * @return bool|\Chronopost\StructType\TrackSkybillResponse
+     * @param \Chronopost\StructType\TrackSkybill $parameters
+     * @return \Chronopost\StructType\TrackSkybillResponse|bool
      */
     public function trackSkybill(\Chronopost\StructType\TrackSkybill $parameters)
     {
         try {
-            $this->setResult($resultTrackSkybill = $this->getSoapClient()->__soapCall('trackSkybill', [
-                $parameters,
-            ], [], [], $this->outputHeaders));
-
-            return $resultTrackSkybill;
-        } catch (SoapFault $soapFault) {
+            $this->setResult($this->getSoapClient()->trackSkybill($parameters));
+            return $this->getResult();
+        } catch (\SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
-
             return false;
         }
     }
-
     /**
-     * Returns the result.
-     *
+     * Returns the result
      * @see AbstractSoapClientBase::getResult()
-     *
      * @return \Chronopost\StructType\TrackSearchResponse|\Chronopost\StructType\TrackSkybillResponse|\Chronopost\StructType\TrackSkybillV2Response|\Chronopost\StructType\TrackWithSenderRefResponse
      */
     public function getResult()

@@ -1,197 +1,176 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Chronopost\StructType;
 
-use InvalidArgumentException;
-use WsdlToPhp\PackageBase\AbstractStructBase;
+use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
- * This class stands for parcelPOD StructType.
+ * This class stands for parcelPOD StructType
+ * @subpackage Structs
  */
 class ParcelPOD extends AbstractStructBase
 {
     /**
      * The formatPOD
      * Meta information extracted from the WSDL
-     * - minOccurs: 0.
+     * - minOccurs: 0
+     * @var string
      */
-    protected ?string $formatPOD = null;
+    public $formatPOD;
     /**
      * The pod
      * Meta information extracted from the WSDL
-     * - minOccurs: 0.
+     * - minOccurs: 0
+     * @var string
      */
-    protected ?string $pod = null;
+    public $pod;
     /**
-     * The podPresente.
+     * The podPresente
+     * @var bool
      */
-    protected ?bool $podPresente = null;
+    public $podPresente;
     /**
      * The skybillNumber
      * Meta information extracted from the WSDL
-     * - minOccurs: 0.
+     * - minOccurs: 0
+     * @var string
      */
-    protected ?string $skybillNumber = null;
+    public $skybillNumber;
     /**
-     * The statusCode.
+     * The statusCode
+     * @var int
      */
-    protected ?int $statusCode = null;
-
+    public $statusCode;
     /**
-     * Constructor method for parcelPOD.
-     *
+     * Constructor method for parcelPOD
      * @uses ParcelPOD::setFormatPOD()
      * @uses ParcelPOD::setPod()
      * @uses ParcelPOD::setPodPresente()
      * @uses ParcelPOD::setSkybillNumber()
      * @uses ParcelPOD::setStatusCode()
-     *
      * @param string $formatPOD
      * @param string $pod
-     * @param bool   $podPresente
+     * @param bool $podPresente
      * @param string $skybillNumber
-     * @param int    $statusCode
+     * @param int $statusCode
      */
-    public function __construct(?string $formatPOD = null, ?string $pod = null, ?bool $podPresente = null, ?string $skybillNumber = null, ?int $statusCode = null)
+    public function __construct($formatPOD = null, $pod = null, $podPresente = null, $skybillNumber = null, $statusCode = null)
     {
         $this
             ->setFormatPOD($formatPOD)
             ->setPod($pod)
             ->setPodPresente($podPresente)
             ->setSkybillNumber($skybillNumber)
-            ->setStatusCode($statusCode)
-        ;
+            ->setStatusCode($statusCode);
     }
-
     /**
-     * Get formatPOD value.
+     * Get formatPOD value
+     * @return string|null
      */
-    public function getFormatPOD(): ?string
+    public function getFormatPOD()
     {
         return $this->formatPOD;
     }
-
     /**
-     * Set formatPOD value.
-     *
+     * Set formatPOD value
      * @param string $formatPOD
-     *
      * @return \Chronopost\StructType\ParcelPOD
      */
-    public function setFormatPOD(?string $formatPOD = null): self
+    public function setFormatPOD($formatPOD = null)
     {
         // validation for constraint: string
         if (!is_null($formatPOD) && !is_string($formatPOD)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($formatPOD, true), gettype($formatPOD)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($formatPOD, true), gettype($formatPOD)), __LINE__);
         }
         $this->formatPOD = $formatPOD;
-
         return $this;
     }
-
     /**
-     * Get pod value.
+     * Get pod value
+     * @return string|null
      */
-    public function getPod(): ?string
+    public function getPod()
     {
         return $this->pod;
     }
-
     /**
-     * Set pod value.
-     *
+     * Set pod value
      * @param string $pod
-     *
      * @return \Chronopost\StructType\ParcelPOD
      */
-    public function setPod(?string $pod = null): self
+    public function setPod($pod = null)
     {
         // validation for constraint: string
         if (!is_null($pod) && !is_string($pod)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pod, true), gettype($pod)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($pod, true), gettype($pod)), __LINE__);
         }
         $this->pod = $pod;
-
         return $this;
     }
-
     /**
-     * Get podPresente value.
+     * Get podPresente value
+     * @return bool|null
      */
-    public function getPodPresente(): ?bool
+    public function getPodPresente()
     {
         return $this->podPresente;
     }
-
     /**
-     * Set podPresente value.
-     *
+     * Set podPresente value
      * @param bool $podPresente
-     *
      * @return \Chronopost\StructType\ParcelPOD
      */
-    public function setPodPresente(?bool $podPresente = null): self
+    public function setPodPresente($podPresente = null)
     {
         // validation for constraint: boolean
         if (!is_null($podPresente) && !is_bool($podPresente)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($podPresente, true), gettype($podPresente)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a bool, %s given', var_export($podPresente, true), gettype($podPresente)), __LINE__);
         }
         $this->podPresente = $podPresente;
-
         return $this;
     }
-
     /**
-     * Get skybillNumber value.
+     * Get skybillNumber value
+     * @return string|null
      */
-    public function getSkybillNumber(): ?string
+    public function getSkybillNumber()
     {
         return $this->skybillNumber;
     }
-
     /**
-     * Set skybillNumber value.
-     *
+     * Set skybillNumber value
      * @param string $skybillNumber
-     *
      * @return \Chronopost\StructType\ParcelPOD
      */
-    public function setSkybillNumber(?string $skybillNumber = null): self
+    public function setSkybillNumber($skybillNumber = null)
     {
         // validation for constraint: string
         if (!is_null($skybillNumber) && !is_string($skybillNumber)) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($skybillNumber, true), gettype($skybillNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($skybillNumber, true), gettype($skybillNumber)), __LINE__);
         }
         $this->skybillNumber = $skybillNumber;
-
         return $this;
     }
-
     /**
-     * Get statusCode value.
+     * Get statusCode value
+     * @return int|null
      */
-    public function getStatusCode(): ?int
+    public function getStatusCode()
     {
         return $this->statusCode;
     }
-
     /**
-     * Set statusCode value.
-     *
+     * Set statusCode value
      * @param int $statusCode
-     *
      * @return \Chronopost\StructType\ParcelPOD
      */
-    public function setStatusCode(?int $statusCode = null): self
+    public function setStatusCode($statusCode = null)
     {
         // validation for constraint: int
         if (!is_null($statusCode) && !(is_int($statusCode) || ctype_digit($statusCode))) {
-            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($statusCode, true), gettype($statusCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($statusCode, true), gettype($statusCode)), __LINE__);
         }
         $this->statusCode = $statusCode;
-
         return $this;
     }
 }
