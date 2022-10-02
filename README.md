@@ -1,5 +1,5 @@
 # php-chronopost
-This package has been generated from the [Colissimo Postage Web Services](https://ws.colissimo.fr/sls-ws/SlsServiceWS?wsdl) WSDL using the [PackageGenerator](https://github.com/WsdlToPhp/PackageGenerator) project.
+This package has been generated from the [Chronopost Shipping Web Services](https://ws.chronopost.fr/shipping-cxf/ShippingServiceWS?wsdl) and [Chronopost Tracking Web Services](https://ws.chronopost.fr/tracking-cxf/TrackingServiceWS?wsdl) WSDL using the [PackageGenerator](https://github.com/WsdlToPhp/PackageGenerator) project.
 
 ## How to install ?
 
@@ -13,3 +13,8 @@ Example scripts are available under the [examples](examples) folder:
 
 - [GenerateLabel](examples/GenerateLabel.php)
 - [Track](examples/Track.php)
+
+## Documentation of the Chronopost web service
+The web service documentation in pdf format is available in the folder [documents](documents):
+
+- [CHR-WS-V2.6.2](documents/CHR-WS-V2.6.2.pdf)
