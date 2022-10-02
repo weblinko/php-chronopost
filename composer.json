@@ -11,5 +11,7 @@
         "psr-4": {
             "Chronopost\\": "./src/"
         }
-    }
+    },
+    "type": "library",
+    "license": "MIT"
 }
