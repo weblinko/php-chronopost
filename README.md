@@ -1,3 +1,7 @@
+[![Latest Stable Version](https://poser.pugx.org/weblinko/php-chronopost/v/stable.svg)](https://packagist.org/packages/weblinko/php-chronopost)
+[![Total Downloads](https://poser.pugx.org/weblinko/php-chronopost/downloads)](https://packagist.org/packages/weblinko/php-chronopost)
+[![License](https://poser.pugx.org/weblinko/php-chronopost/license.svg)](https://github.com/weblinko/php-chronopost/blob/master/LICENSE)
+
 # php-chronopost
 This package has been generated from the [Chronopost Shipping Web Services](https://ws.chronopost.fr/shipping-cxf/ShippingServiceWS?wsdl) and [Chronopost Tracking Web Services](https://ws.chronopost.fr/tracking-cxf/TrackingServiceWS?wsdl) WSDL using the [PackageGenerator](https://github.com/WsdlToPhp/PackageGenerator) project.
 
