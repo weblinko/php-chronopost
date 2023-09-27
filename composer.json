@@ -1,6 +1,6 @@
 {
     "name": "weblinko/php-chronopost",
-    "description": "Package generated from https://ws.chronopost.fr/shipping-cxf/ShippingServiceWS?wsdl using wsdltophp/packagegenerator",
+    "description": "Package generated from https://ws.chronopost.fr/shipping-cxf/ShippingServiceWS?wsdl",
     "require": {
         "php": ">=7.4",
         "ext-soap": "*",
